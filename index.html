@@ -11,205 +11,29 @@
 </head>
 <body>
 
-  <!-- ══════════════════════════════════ NAV ══ -->
-  <nav class="c-nav" id="navbar">
-    <a href="#" class="c-nav__logo">
-       <img src="images/Cumulus-main-Logo.png" alt="Cumulus Wealth" class="c-nav__logo-img" />
-     
-    </a>
-    <button class="c-nav__btn" id="menuToggle" aria-label="Toggle Menu">
-      <span class="c-nav__btn-label" id="menuLabel">MENU</span>
-      <span class="c-nav__btn-close" id="menuClose">✕</span>
-    </button>
-  </nav>
+  <!-- ✦ HEADER — edit once in components/header.html ✦ -->
+  <div data-include="components/header.html"></div>
 
-  <!-- ══════════════════════════════════ OVERLAY MENU ══ -->
-  <div class="c-overlay" id="overlayMenu">
-    <div class="c-overlay__left">
-      <ul class="c-onav">
-        <li class="c-onav__item" data-menu="about">
-          <span class="c-onav__arrow">→</span>
-          <a href="#" class="c-onav__link">About</a>
-        </li>
-        <li class="c-onav__item" data-menu="offerings">
-          <span class="c-onav__arrow">→</span>
-          <a href="#" class="c-onav__link">Offerings</a>
-        </li>
-        <li class="c-onav__item" data-menu="insights">
-          <span class="c-onav__arrow">→</span>
-          <a href="#" class="c-onav__link">Insights</a>
-        </li>
-        <li class="c-onav__item" data-menu="client">
-          <span class="c-onav__arrow">→</span>
-          <a href="#" class="c-onav__link">Client Login</a>
-        </li>
-        <li class="c-onav__item" data-menu="contact">
-          <span class="c-onav__arrow">→</span>
-          <a href="#" class="c-onav__link">Get In Touch</a>
-        </li>
-      </ul>
-    </div>
-    <div class="c-overlay__right" id="overlayRight">
-
-      <div class="c-sub" data-panel="about">
-        <div class="c-sub__links">
-          <a href="#">About Cumulus</a>
-          <a href="#">Founders &amp; Team</a>
-        </div>
-        <!-- <div class="c-sub__img">
-          <img src="images/about-bg.jpg" alt="" />
-          <div class="c-sub__placeholder"></div>
-        </div> -->
-      </div>
-
-      <div class="c-sub" data-panel="offerings">
-        <div class="c-sub__links">
-          <a href="#">Investment Philosophy</a>
-          <a href="#">Investment Process</a>
-          <a href="#">Investment Strategy</a>
-          <a href="#">Product Offerings</a>
-        </div>
-        <!-- <div class="c-sub__img">
-          <div class="c-sub__placeholder"></div>
-        </div> -->
-      </div>
-
-      <div class="c-sub" data-panel="insights">
-        <div class="c-sub__links">
-          <a href="#">Market Commentary</a>
-          <a href="#">Research &amp; Reports</a>
-          <a href="#">News &amp; Media</a>
-        </div>
-        <!-- <div class="c-sub__img">
-          <div class="c-sub__placeholder"></div>
-        </div> -->
-      </div>
-
-      <div class="c-sub" data-panel="client">
-        <div class="c-sub__links">
-          <a href="#">Portal Access</a>
-          <a href="#">Account Overview</a>
-        </div>
-        <!-- <div class="c-sub__img">
-          <div class="c-sub__placeholder"></div>
-        </div> -->
-      </div>
-
-      <div class="c-sub" data-panel="contact">
-        <div class="c-sub__links">
-          <a href="#">Send a Message</a>
-          <a href="#">Schedule a Call</a>
-          <a href="#">Our Locations</a>
-        </div>
-        <!-- <div class="c-sub__img">
-          <div class="c-sub__placeholder"></div>
-        </div> -->
-      </div>
-
-    </div>
-  </div>
-
-    <section class="hero">
-    <!-- Hero background: replace with your image -->
+  <!-- ══════════════════════════════════ HERO ══ -->
+  <section class="hero">
     <img class="hero__bg-img" src="./images/Bg/Bg_Homepage.jpg" alt="" />
-    <!-- <div class="hero__bg-placeholder"></div> -->
-    <!-- <div class="hero__waves">
-      <svg class="waves-svg" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <g class="wave-group wave-group--1" fill="none" stroke="white" stroke-width="1.2" opacity="0.55">
-          <path class="wave-path" d="M-50 420 C100 380, 200 350, 350 360 C500 370, 600 410, 750 390 C850 375, 920 350, 980 340"/>
-          <path class="wave-path" d="M-50 440 C80 400, 190 370, 340 382 C490 394, 610 430, 760 408 C860 392, 930 368, 980 358"/>
-          <path class="wave-path" d="M-50 460 C60 422, 170 396, 330 406 C490 416, 630 452, 780 428 C878 410, 940 388, 980 376"/>
-        </g>
-        <g class="wave-group wave-group--2" fill="none" stroke="white" stroke-width="1" opacity="0.35">
-          <path class="wave-path" d="M-50 390 C120 362, 240 330, 400 342 C560 354, 660 396, 810 374 C890 360, 950 336, 980 322"/>
-          <path class="wave-path" d="M-50 370 C140 344, 270 312, 430 326 C590 340, 680 380, 830 356 C908 342, 956 318, 980 304"/>
-          <path class="wave-path" d="M-50 350 C160 326, 300 296, 460 312 C620 328, 700 366, 848 340 C924 326, 962 302, 980 288"/>
-        </g>
-        <g class="wave-group wave-group--3" fill="none" stroke="white" stroke-width="0.8" opacity="0.2">
-          <path class="wave-path" d="M-50 480 C40 454, 140 432, 300 446 C460 460, 580 490, 730 466 C830 448, 920 426, 980 412"/>
-          <path class="wave-path" d="M-50 500 C30 476, 130 454, 290 468 C450 482, 570 510, 720 484 C820 466, 918 444, 980 430"/>
-        </g>
-      </svg>
-    </div> -->
-   <div class="c-hero__body">
+    <div class="c-hero__body">
       <h1 class="c-hero__heading">
         Sustained Growth<br />
         for the Modern Investor
       </h1>
       <div class="c-hero__ctas">
-        <a href="#" class="c-btn c-btn--filled">OFFERINGS</a>
-        <a href="#" class="c-btn c-btn--filled">GET IN TOUCH</a>
+        <a href="offerings.html" class="c-btn c-btn--filled">OFFERINGS</a>
+        <a href="contact.html"   class="c-btn c-btn--filled">GET IN TOUCH</a>
       </div>
     </div>
   </section>
 
-<!-- ══════════════════════════════════ FOOTER ══ -->
-<footer class="c-footer">
+  <!-- ✦ FOOTER — edit once in components/footer.html ✦ -->
+  <div data-include="components/footer.html"></div>
 
-  <!-- ── Main footer body ── -->
-  <div class="c-footer__body">
-    <div class="container">
-      <div class="row align-items-center">
-
-        <!-- LEFT: Logo -->
-        <div class="col-md-4 col-5 mb-4 mb-md-0">
-          <img src="images/footer-logo.png" alt="Cumulus Wealth" class="c-footer__logo-img" />
-        </div>
-
-        <!-- CENTRE: Quick Links -->
-        <div class="col-md-4 col-7 mb-4 mb-md-0">
-          <p class="c-footer__ql-heading text-md-end">Quick Links</p>
-          <ul class="c-footer__ql">
-            <li><a href="#">SEBI Scores</a></li>
-            <li><a href="#">Investor Charter</a></li>
-            <li><a href="#">Disclosure Document</a></li>
-            <li><a href="#">Fee Calculator</a></li>
-            <li><a href="#">For Grievances</a></li>
-          </ul>
-        </div>
-
-        <!-- RIGHT: Nav links -->
-        <div class="col-md-4 col-12 text-md-end text-start">
-          <nav class="c-footer__nav">
-            <a href="#">ABOUT</a>
-            <span class="c-footer__pipe">|</span>
-            <a href="#">OFFERINGS</a>
-            <span class="c-footer__pipe">|</span>
-            <a href="#">CONTACT</a>
-          </nav>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ── Bottom bar ── -->
-  <div class="c-footer__bar">
-    <div class="container">
-      <div class="row align-items-center">
-
-        <div class="col-md-3 col-12 mb-2 mb-md-0 text-md-center">
-          <span>Portfolio Management Service</span>
-        </div>
-
-        <div class="col-md-3 col-12 mb-2 mb-md-0 text-md-center">
-          <span>SEBI Registration Number: INP000006234</span>
-        </div>
-
-        <div class="col-md-3 col-12 mb-2 mb-md-0 text-md-center">
-          <span>Cumulus Advisory LLP</span>
-        </div>
-
-        <div class="col-md-3 col-12 text-md-end">
-          <a href="#" class="c-footer__bar-link">Privacy Policy</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-</footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="components/includes.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

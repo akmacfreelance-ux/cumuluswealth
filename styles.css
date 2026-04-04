@@ -244,6 +244,26 @@ img { display: block; max-width: 100%; }
   white-space: nowrap;
 }
 
+.c-onav__sub {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+
+  transition: all 0.3s ease;
+}
+
+/* SHOW submenu */
+.c-onav__item.is-active .c-onav__sub {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
 .c-onav__item.is-active .c-onav__arrow,
 .c-onav__item:hover    .c-onav__arrow {
   width: 26px;
@@ -260,6 +280,12 @@ img { display: block; max-width: 100%; }
   transition: letter-spacing 0.3s;
 }
 .c-onav__item:hover .c-onav__link { letter-spacing: 0.09em; color: var(--navy) }
+/* .c-onav__item:hover .c-onav__sub,
+.c-onav__sub:hover {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+} */
 
 /* Stagger on open */
 .c-overlay.is-open .c-onav__item {
@@ -798,14 +824,43 @@ img { display: block; max-width: 100%; }
 
   .c-footer__nav {
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
+    justify-content: center;
   }
 
   .c-footer__ql-heading {
     margin-bottom: 12px;
   }
+  /* MOBILE SUBMENU */
+/* SUBMENU (ALL DEVICES NOW) */
+.c-onav__sub {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+  display: flex;
+  flex-direction: column;
 }
 
+.c-onav__sub a {
+  font-size: 14px;
+  padding: 10px 0 10px 30px;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+}
+
+/* OPEN STATE */
+.c-onav__item.is-open .c-onav__sub {
+  max-height: 400px;
+}
+.c-onav__item {
+   display: block;
+}
+}
+@media (min-width: 769px) {
+  .c-onav__sub {
+    display: none; /* or keep hidden if you don’t want inline submenu */
+  }
+}
 @media (max-width: 600px) {
   .c-footer__bar-inner {
     flex-direction: column;
