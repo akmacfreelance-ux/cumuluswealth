@@ -1,78 +1,115 @@
-/**
- * CUMULUS WEALTH — script.js
- * ─────────────────────────────────────────────────────────
- * All logic is inside initCumulus() so that components/includes.js
- * can call it AFTER the header + footer HTML has been injected.
- * ─────────────────────────────────────────────────────────
- */
+/* ═══════════════════════════════════════════════════════════════
+   CUMULUS WEALTH — script.js
+   Called by components.js after header/footer injection.
+   All menu behaviour: CLICK to open/close, click outside to dismiss.
+═══════════════════════════════════════════════════════════════ */
 
 function initCumulus() {
   'use strict';
 
+  if (window.__cumulusInitialized) return;
+  window.__cumulusInitialized = true;
+
   const navbar     = document.getElementById('navbar');
   const menuToggle = document.getElementById('menuToggle');
   const overlay    = document.getElementById('overlayMenu');
-  const navItems   = document.querySelectorAll('.c-onav__item');
-  const subPanels  = document.querySelectorAll('.c-sub');
-  const leftCol    = document.querySelector('.c-overlay__left');
 
   if (!navbar || !menuToggle || !overlay) return;
 
-  let menuOpen = false;
+  const navItems  = document.querySelectorAll('.c-onav__item');
+  const subPanels = document.querySelectorAll('.c-sub');
 
-  /* ── Scroll: nav style ───────────────────────────────── */
+  let menuOpen  = false;
+  let activeKey = null;   // tracks which submenu is open
+
+  /* ── Navbar scroll style ────────────────────────────── */
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('is-scrolled', window.scrollY > 50);
   }, { passive: true });
 
-  /* ── Open / close menu ───────────────────────────────── */
+  /* ── Open / close MAIN overlay ─────────────────────── */
   function openMenu() {
     menuOpen = true;
     overlay.classList.add('is-open');
     navbar.classList.add('menu-open');
     document.body.style.overflow = 'hidden';
-    subPanels.forEach(p => p.classList.remove('is-active'));
-    navItems.forEach(i => i.classList.remove('is-active', 'is-open'));
   }
 
   function closeMenu() {
-    menuOpen = false;
+    menuOpen  = false;
+    activeKey = null;
     overlay.classList.remove('is-open');
     navbar.classList.remove('menu-open');
     document.body.style.overflow = '';
-    subPanels.forEach(p => p.classList.remove('is-active'));
     navItems.forEach(i => i.classList.remove('is-active', 'is-open'));
+    subPanels.forEach(p => p.classList.remove('is-active'));
   }
 
-  menuToggle.addEventListener('click', () => menuOpen ? closeMenu() : openMenu());
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && menuOpen) closeMenu(); });
+  menuToggle.addEventListener('click', e => {
+    e.stopPropagation();
+    menuOpen ? closeMenu() : openMenu();
+  });
 
-  /* ── Submenu: desktop hover + mobile accordion ───────── */
+  // Escape key always closes
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menuOpen) closeMenu();
+  });
+
+  // Click anywhere outside overlay → close
+  document.addEventListener('click', e => {
+    if (menuOpen &&
+        !overlay.contains(e.target) &&
+        !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  /* ── DESKTOP: click nav item → toggle right panel ───── */
   navItems.forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      if (window.innerWidth <= 768) return;
+
+    // Desktop click
+    item.addEventListener('click', e => {
+      e.stopPropagation();
+
+      if (window.innerWidth <= 768) return; // handled by mobile block
+
       const key = item.dataset.menu;
+
+      if (activeKey === key) {
+        // Same item clicked → collapse
+        activeKey = null;
+        item.classList.remove('is-active');
+        subPanels.forEach(p => {
+          if (p.dataset.panel === key) p.classList.remove('is-active');
+        });
+        return;
+      }
+
+      // Open this item
+      activeKey = key;
       navItems.forEach(i => i.classList.remove('is-active'));
       item.classList.add('is-active');
-      subPanels.forEach(p => p.classList.toggle('is-active', p.dataset.panel === key));
+      subPanels.forEach(p => {
+        p.classList.toggle('is-active', p.dataset.panel === key);
+      });
     });
 
-    item.addEventListener('click', () => {
+    /* ── MOBILE: click nav item → accordion ──────────── */
+    item.addEventListener('click', e => {
+      e.stopPropagation();
+
       if (window.innerWidth > 768) return;
-      navItems.forEach(i => { if (i !== item) i.classList.remove('is-open'); });
-      item.classList.toggle('is-open');
+
+      const isOpen = item.classList.contains('is-open');
+      navItems.forEach(i => i.classList.remove('is-open'));
+      if (!isOpen) item.classList.add('is-open');
     });
   });
 
-  if (leftCol) {
-    leftCol.addEventListener('mouseleave', () => {
-      if (window.innerWidth <= 768) return;
-      navItems.forEach(i => i.classList.remove('is-active'));
-      subPanels.forEach(p => p.classList.remove('is-active'));
-    });
-  }
+  // Stop clicks inside a sub-panel from bubbling to document
+  subPanels.forEach(p => p.addEventListener('click', e => e.stopPropagation()));
 
-  /* ── Smooth anchor scroll ────────────────────────────── */
+  /* ── Smooth anchor scroll ───────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href');
@@ -80,12 +117,12 @@ function initCumulus() {
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      const doScroll = () => target.scrollIntoView({ behavior: 'smooth' });
-      menuOpen ? (closeMenu(), setTimeout(doScroll, 420)) : doScroll();
+      const go = () => target.scrollIntoView({ behavior: 'smooth' });
+      menuOpen ? (closeMenu(), setTimeout(go, 420)) : go();
     });
   });
 
-  /* ── Hero wave parallax ──────────────────────────────── */
+  /* ── Hero wave parallax ─────────────────────────────── */
   const wvGroup = document.querySelector('.c-hero__waves');
   if (wvGroup) {
     window.addEventListener('scroll', () => {
@@ -93,24 +130,62 @@ function initCumulus() {
     }, { passive: true });
   }
 
-  /* ── Scroll reveal ───────────────────────────────────── */
+  /* ── Scroll reveal (.ab-reveal) ─────────────────────── */
   const revealEls = document.querySelectorAll('.ab-reveal');
-  if (revealEls.length) {
+  if (revealEls.length && 'IntersectionObserver' in window) {
     const ro = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('is-visible'); ro.unobserve(e.target); }
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          ro.unobserve(e.target);
+        }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(el => ro.observe(el));
   }
+
+  /* ── Counter animation ──────────────────────────────── */
+  const statNums = document.querySelectorAll('[data-target]');
+  if (statNums.length && 'IntersectionObserver' in window) {
+    const co = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          co.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    statNums.forEach(el => co.observe(el));
+  }
+
+  function animateCounter(el) {
+    const target  = parseFloat(el.dataset.target);
+    const isFloat = target % 1 !== 0;
+    const dur     = 1800;
+    const t0      = performance.now();
+    (function tick(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      const e = 1 - Math.pow(1 - p, 3);
+      el.textContent = isFloat ? (target * e).toFixed(1) : Math.round(target * e);
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
 }
 
-/* ─────────────────────────────────────────────────────────
-   Fallback: if page has no data-include placeholders,
-   run immediately (works for pages not yet migrated).
-───────────────────────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', () => {
-  if (!document.querySelector('[data-include]')) {
+/* ── Fallback: if NOT using components.js (no slots) ── */
+function bootCumulus() {
+  if (window.__cumulusInitialized) return;
+  const menuToggle = document.getElementById('menuToggle');
+  const overlay    = document.getElementById('overlayMenu');
+  const navbar     = document.getElementById('navbar');
+  if (menuToggle && overlay && navbar) {
     initCumulus();
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootCumulus);
+} else {
+  bootCumulus();
+}
+document.addEventListener('componentsLoaded', bootCumulus);

@@ -35,6 +35,9 @@
     } else {
       console.warn("⚠️ initCumulus() NOT FOUND");
     }
+
+    // Notify any script waiting for injected components
+    document.dispatchEvent(new Event('componentsLoaded'));
   }
 
   includes.forEach(function (el, index) {

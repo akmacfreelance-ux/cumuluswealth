@@ -3,201 +3,204 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>About — Cumulus Wealth</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="icon" href="./images/fav-icon.png" />
+
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="about.css" />
 </head>
-<body class="page-about">
 
-  <!-- ✦ HEADER — edit once in components/header.html ✦ -->
-  <div data-include="components/header.html"></div>
+<body>
 
-  <!-- ══════════════════════════════════════════════════════════
-       SECTION 1 — HERO / ABOUT US
-  ══════════════════════════════════════════════════════════════ -->
-  <section class="ab-hero">
-    <!-- Replace with: <img class="ab-hero__bg-img" src="images/Bg/Bg_About.jpg" alt="" /> -->
-    <div class="ab-hero__bg"></div>
+<!-- HEADER -->
+<div data-include="components/header.html"></div>
 
-    <div class="ab-hero__waves" aria-hidden="true">
-      <svg class="ab-waves-svg" viewBox="0 0 600 700" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="white" stroke-linecap="round">
-          <path stroke-width="1.6" opacity="0.70" d="M-20 200 C60 240, 120 290, 140 350 C160 410, 140 460, 120 510 C105 550, 90 580, 80 620"/>
-          <path stroke-width="1.4" opacity="0.58" d="M10 190 C90 232, 152 282, 172 342 C192 402, 170 454, 148 506 C132 547, 116 578, 104 620"/>
-          <path stroke-width="1.3" opacity="0.46" d="M38 182 C118 225, 182 275, 202 336 C222 397, 200 450, 176 502 C159 544, 142 576, 130 620"/>
-          <path stroke-width="1.2" opacity="0.36" d="M66 175 C146 218, 212 268, 232 330 C252 392, 228 446, 204 498 C186 541, 168 574, 155 620"/>
-          <path stroke-width="1.0" opacity="0.26" d="M94 168 C174 212, 242 262, 262 325 C282 388, 256 442, 232 494 C213 537, 194 572, 180 620"/>
-          <path stroke-width="0.8" opacity="0.18" d="M122 162 C202 206, 272 256, 292 320 C312 384, 284 438, 260 490 C240 534, 220 570, 205 620"/>
-        </g>
-      </svg>
+<!-- ═════════ ABOUT HERO ═════════ -->
+<section class="about-hero">
+  <img src="./images/About-Section-1.jpg" class="about-bg" alt="">
+
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center text-center">
+      
+      <div class="col-md-8 col-lg-6 text-start about-right">
+        <p class="about-label">ABOUT CUMULUS</p>
+
+        <h1 class="about-text">
+          We are a boutique portfolio management service providing dynamic,
+          research-driven and professional wealth creation opportunities to
+          clients looking to invest in the Indian markets.
+        </h1>
+      </div>
+
     </div>
+  </div>
+</section>
 
-    <div class="container-fluid px-0">
-      <div class="row g-0 ab-hero__row">
-        <div class="col-md-5 col-12 ab-hero__left"></div>
-        <div class="col-md-6 col-12 ab-hero__right ab-reveal">
-          <span class="ab-label">ABOUT US</span>
-          <p class="ab-hero__intro">
-            We are a boutique portfolio management service providing dynamic, research-driven and professional wealth creation opportunities to clients looking to invest in the Indian markets.
+<section class="about-dual">
+
+  <img src="./images/About-Section-2.jpg" class="about-dual-bg" alt="">
+
+  <div class="container h-100">
+    <div class="about-dual-inner">
+
+      <!-- ROW 1 -->
+      <div class="row align-items-center about-row">
+        <div class="col-md-5">
+          <h3 class="about-heading">
+            INVESTING WITH PATIENCE AND PERSPECTIVE
+          </h3>
+        </div>
+
+        <div class="col-md-7">
+          <p class="about-desc">
+            Cumulus Wealth was founded to serve a new generation of capital — investors who combine an entrepreneurial mindset with a long-term perspective.  We bring together years of experience, a meticulous research process, and a highly disciplined approach to create enduring wealth and lasting value.
           </p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ══════════════════════════════════════════════════════════
-       SECTION 2 — INVESTING WITH PATIENCE AND PERSPECTIVE
-  ══════════════════════════════════════════════════════════════ -->
-  <section class="ab-patience">
-    <!-- Replace with: <img class="ab-patience__bg-img" src="images/Bg/Bg_About_2.jpg" alt="" /> -->
-    <div class="ab-patience__bg"></div>
-    <div class="container-fluid px-0">
-      <div class="row g-0 align-items-center ab-patience__row">
-        <div class="col-md-5 col-12 ab-patience__left ab-reveal">
-          <h2 class="ab-big-heading">
-            INVESTING<br />WITH<br />PATIENCE<br />AND<br />PERSPECTIVE
-          </h2>
+      <!-- DIVIDER -->
+      <div class="about-divider"></div>
+
+      <!-- ROW 2 -->
+      <div class="row align-items-center about-row">
+        <div class="col-md-5">
+          <h3 class="about-heading">
+            RISE ABOVE THE NOISE
+          </h3>
         </div>
-        <div class="col-md-6 col-12 ab-patience__right ab-reveal ab-reveal--d1">
-          <p class="ab-body-text">
-            Cumulus Wealth was founded to serve a new generation of capital — investors who combine an entrepreneurial mindset with a long-term perspective. We bring together years of expertise, a meticulous research process, and a highly calibrated approach to understanding clients and lasting value.
+
+        <div class="col-md-7">
+          <p class="about-desc">
+            In an environment of constant information and opinion, we focus on alignment, clarity, and transparency.  Our ethos centers on regular and personalised communication that allows our clients to maintain an  informed view of their portfolio and the decisions behind it. We put in the hours to simplify wealth management for you.
           </p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ══════════════════════════════════════════════════════════
-       SECTION 3 — RISE ABOVE THE NOISE
-  ══════════════════════════════════════════════════════════════ -->
-  <section class="ab-noise">
-    <!-- Replace with: <img class="ab-noise__bg-img" src="images/Bg/Bg_About_3.jpg" alt="" /> -->
-    <div class="ab-noise__bg"></div>
-    <div class="ab-noise__waves" aria-hidden="true">
-      <svg class="ab-noise-svg" viewBox="0 0 500 600" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="white" stroke-linecap="round">
-          <path stroke-width="1.5" opacity="0.55" d="M520 100 C440 140, 370 200, 340 280 C310 360, 330 430, 360 490 C380 530, 410 560, 430 600"/>
-          <path stroke-width="1.3" opacity="0.44" d="M500 90 C420 130, 348 192, 318 272 C288 352, 308 424, 340 484 C360 525, 392 556, 412 600"/>
-          <path stroke-width="1.1" opacity="0.33" d="M480 80 C400 122, 328 184, 296 265 C264 346, 286 418, 318 480 C338 521, 372 552, 394 600"/>
-          <path stroke-width="0.9" opacity="0.23" d="M460 70 C380 114, 308 177, 274 258 C240 340, 264 412, 298 474 C318 516, 353 547, 376 600"/>
-          <path stroke-width="0.7" opacity="0.15" d="M440 60 C360 106, 288 170, 252 252 C216 334, 242 406, 278 468 C298 510, 334 542, 358 600"/>
-        </g>
-      </svg>
     </div>
-    <div class="container-fluid px-0">
-      <div class="row g-0 align-items-center ab-noise__row">
-        <div class="col-md-5 col-12 ab-noise__left ab-reveal">
-          <h2 class="ab-big-heading">
-            RISE ABOVE<br />THE NOISE
-          </h2>
-        </div>
-        <div class="col-md-6 col-12 ab-noise__right ab-reveal ab-reveal--d1">
-          <p class="ab-body-text">
-            In an environment of constant information and opinion, we focus on alignment, clarity, and transparency. Our ethos centres on regular and personalised communication that allows our clients to maintain an informed view of their portfolio and the decisions behind it. We put in the hours to simply do what we agreed to for you.
-          </p>
+  </div>
+
+</section>
+<!-- ═════════ TEAM ═════════ -->
+
+
+<section class="team-section">
+  <img src="./images/About-Section-3.jpg" class="about-dual-bg" alt="">
+
+  <div class="container">
+    <h4 class="team-title">FOUNDERS & THE TEAM</h4>
+
+    <!-- TOP ROW (IMAGES) -->
+    <div class="row team-top-row">
+
+      <div class="col-md-6 d-flex justify-content-center">
+        <div class="team-card" data-modal="modal-arjun">
+          <img src="./images/Person.png" alt="Arjunkumar Krishnan">
+
+          <div class="team-overlay">
+            <h5>Arjunkumar Krishnan</h5>
+            <p>FOUNDER & PRINCIPAL MANAGER</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ══════════════════════════════════════════════════════════
-       SECTION 4 — FOUNDERS & THE TEAM
-  ══════════════════════════════════════════════════════════════ -->
-  <section class="ab-team" id="founders">
-    <!-- Replace with: <img class="ab-team__bg-img" src="images/Bg/Bg_About_4.jpg" alt="" /> -->
-    <div class="ab-team__bg"></div>
-    <div class="container">
-      <h2 class="ab-team__heading ab-reveal">FOUNDERS &amp; THE TEAM</h2>
-      <div class="row g-4 ab-team__grid">
+      <div class="col-md-6 d-flex justify-content-center">
+        <div class="team-card" data-modal="modal-ojas">
+          <img src="./images/Person.png" alt="Ojas Day">
 
-        <div class="col-md-3 col-sm-6 col-6 ab-reveal">
-          <div class="ab-member">
-            <div class="ab-member__photo">
-              <!-- Replace: <img src="images/team/founder-1.jpg" alt="Founder Name" /> -->
-              <div class="ab-member__photo-placeholder"></div>
-            </div>
-            <div class="ab-member__info">
-              <p class="ab-member__name">Founder Name</p>
-              <p class="ab-member__title">CO-FOUNDER &amp; MANAGING DIRECTOR</p>
-            </div>
+          <div class="team-overlay">
+            <h5>Ojas Day</h5>
+            <p>CO-FOUNDER & CIO</p>
           </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 col-6 ab-reveal ab-reveal--d1">
-          <div class="ab-member">
-            <div class="ab-member__photo">
-              <!-- Replace: <img src="images/team/founder-2.jpg" alt="Co-Founder Name" /> -->
-              <div class="ab-member__photo-placeholder"></div>
-            </div>
-            <div class="ab-member__info">
-              <p class="ab-member__name">Co-Founder Name</p>
-              <p class="ab-member__title">CO-FOUNDER &amp; DIRECTOR</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 col-6 ab-reveal ab-reveal--d2">
-          <div class="ab-member">
-            <div class="ab-member__photo">
-              <!-- Replace: <img src="images/team/member-3.jpg" alt="Team Member" /> -->
-              <div class="ab-member__photo-placeholder"></div>
-            </div>
-            <div class="ab-member__info">
-              <p class="ab-member__name">Team Member</p>
-              <p class="ab-member__title">RELATIONSHIP MANAGER</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 col-6 ab-reveal ab-reveal--d3">
-          <div class="ab-member">
-            <div class="ab-member__photo">
-              <!-- Replace: <img src="images/team/member-4.jpg" alt="Team Member" /> -->
-              <div class="ab-member__photo-placeholder"></div>
-            </div>
-            <div class="ab-member__info">
-              <p class="ab-member__name">Team Member</p>
-              <p class="ab-member__title">RESEARCH ANALYST</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════════════════
-       SECTION 5 — BOTTOM CTA STRIP
-  ══════════════════════════════════════════════════════════════ -->
-  <section class="ab-cta-strip">
-    <!-- Replace with: <img class="ab-cta-strip__bg-img" src="images/Bg/Bg_About_CTA.jpg" alt="" /> -->
-    <div class="ab-cta-strip__bg"></div>
-    <div class="container-fluid px-0">
-      <div class="row g-0">
-        <div class="col-md-6 col-12">
-          <a href="offerings.html" class="ab-cta-block ab-cta-block--left">
-            <span class="ab-cta-block__label">HOW WE INVEST</span>
-            <span class="ab-cta-block__arrow">→</span>
-          </a>
-        </div>
-        <div class="col-md-6 col-12">
-          <a href="contact.html" class="ab-cta-block ab-cta-block--right">
-            <span class="ab-cta-block__label">GET IN TOUCH</span>
-            <span class="ab-cta-block__arrow">→</span>
-          </a>
         </div>
       </div>
+
     </div>
-  </section>
 
-  <!-- ✦ FOOTER — edit once in components/footer.html ✦ -->
-  <div data-include="components/footer.html"></div>
+    <!-- DIVIDER -->
+    <div class="team-divider"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="components/includes.js"></script>
+    <!-- BOTTOM ROW (TEXT ONLY) -->
+    <div class="row team-bottom-row text-center">
+
+      <div class="col-md-6">
+        <h6>Chandrashekhar Santosh</h6>
+        <p>COMPLIANCE MANAGER</p>
+      </div>
+
+      <div class="col-md-6">
+        <h6>Nandini Kishore</h6>
+        <p>OPERATIONS EXECUTIVE</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="about-links">
+    <img src="./images/About-Section-3.jpg" class="about-dual-bg" alt="">
+  <div class="container">
+
+    <div class="about-links-inner">
+      <a href="#" class="about-link-left">HOW WE INVEST</a>
+      <a href="#" class="about-link-right">GET IN TOUCH</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ARJUN MODAL -->
+<div class="team-modal" id="modal-arjun">
+  <div class="team-modal-inner">
+
+    <div class="team-modal-left">
+      <img src="./images/Person.png" alt="">
+    </div>
+
+    <div class="team-modal-right">
+      <div class="team-modal-nav">
+        <span class="modal-close">← BACK</span>
+      </div>
+
+      <div class="team-modal-content">
+        <!-- <h3>Arjunkumar Krishnan</h3>
+        <p>Founder & Principal Manager</p> -->
+        <p>
+         Anirudh Krishna brings over 13 years of experience in financial services. A graduate of the London School of Economics, he built a client base of over 300 early in his career at a growing financial services firm.
+          <br><br>
+          In 2019, he established his independent advisory (RIA) practice with a focus on thoughtful, personalised wealth management. Combining a deep understanding of financial markets with close client engagement, Anirudh designs investment solutions tailored to each client’s unique context.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div data-include="components/footer.html"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="components/includes.js"></script>
   <script src="script.js"></script>
+
+<script>
+document.querySelectorAll(".team-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const id = card.dataset.modal;
+    document.getElementById(id).classList.add("active");
+  });
+});
+
+document.querySelectorAll(".modal-close").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.closest(".team-modal").classList.remove("active");
+  });
+});
+</script>
 </body>
 </html>
