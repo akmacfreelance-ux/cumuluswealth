@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevate — Cumulus Wealth</title>
+  <link rel="icon" href="./images/fav-icon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- HEADER (no nav shown on this page — just the back link) -->
+<div data-include="components/header.html"></div>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO
+     BG fades in top→bottom, then lines appear
+═══════════════════════════════════════════════ -->
+<section class="elv-hero">
+
+
+  <!-- Real background — replace src -->
+  <img src="./images/elevate/elevate-bg.png" class="elv-hero-bg" alt=""
+       onerror="this.style.display='none'">
+
+  <!-- Decorative vertical wave lines — left side (image) -->
+  <img src="./images/elevate/Waves.png" class="elv-hero-lines" alt="">
+
+  <!-- Text content — bottom right -->
+  <div class="elv-hero-content">
+    <p class="elv-hero-intro">
+      <strong>Elevate Fund</strong> is a concentrated in equity focused portfolio
+      designed for sustained value creation through long-term
+      ownership of quality businesses.
+    </p>
+    <br>
+    <p class="elv-hero-intro">
+      Our flagship investment strategy that focuses on investing in
+      business available at reasonable valuation while also having
+      high growth prospects.
+    </p>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — SCHEME PRIORITIES
+═══════════════════════════════════════════════ -->
+<section class="elv-priorities">
+
+  <div class="elv-priorities-bg-fallback"></div>
+  <img src="./images/elevate/Elevate-Section-2.jpg" class="elv-priorities-bg" alt=""
+       onerror="this.style.display='none'">
+
+  <div class="container">
+
+    <!-- Label top-left -->
+    <h2 class="elv-section-label">Scheme<br>Priorities</h2>
+
+    <!-- Priority items grid — alternating left/right like the design -->
+    <div class="elv-priority-grid">
+
+      <!-- Row 1: empty left | item right -->
+      <div class="elv-priority-row">
+        <span class="elv-priority-empty"></span>
+        <div class="elv-priority-item elv-priority-item--right">
+          <p>Small and mid-sized companies<br>with high growth prospects</p>
+        </div>
+      </div>
+
+      <!-- Row 2: item left | empty right -->
+      <div class="elv-priority-row">
+        <div class="elv-priority-item elv-priority-item--left">
+          <p>Flexibility to participate in large cap<br>and special situation<br>opportunities when attractive</p>
+        </div>
+        <span class="elv-priority-empty"></span>
+      </div>
+
+      <!-- Row 3: empty left | item right -->
+      <div class="elv-priority-row">
+        <span class="elv-priority-empty"></span>
+        <div class="elv-priority-item elv-priority-item--right">
+          <p>Low churn and long holding<br>periods driven by business<br>performance, not market noise</p>
+        </div>
+      </div>
+
+      <!-- Row 4: item left | empty right -->
+      <div class="elv-priority-row">
+        <div class="elv-priority-item elv-priority-item--left">
+          <p>Risk management through strong<br>research, meaningful position sizing<br>and continuous monitoring of<br>business fundamentals</p>
+        </div>
+        <span class="elv-priority-empty"></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — CURATED FOR
+═══════════════════════════════════════════════ -->
+<section class="elv-curated">
+
+  <div class="elv-curated-bg-fallback"></div>
+  <img src="./images/elevate/Elevate-Section-3.jpg" class="elv-curated-bg" alt=""
+       onerror="this.style.display='none'">
+
+  <div class="container">
+    <p class="elv-curated-label">Curated For</p>
+
+    <p class="elv-curated-body">
+      Investors with a minimum 5-year investment horizon who seek disproportionate
+      long-term high-potential capital appreciation opportunities.
+    </p>
+
+    <p class="elv-curated-cta">
+      <a href="./contact.html">Get in touch</a> to access our scheme brochure and performance record.
+    </p>
+  </div>
+    <div class="container">
+    <div class="elv-links-divider"></div>
+    <div class="elv-links-row">
+      <a href="./about.html" class="elv-nav-link">About Cumulus</a>
+      <a href="./horizon.html" class="elv-nav-link">Read About Horizon</a>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<div data-include="components/footer.html"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="components/includes.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

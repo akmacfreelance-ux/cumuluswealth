@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Cumulus Wealth</title>
+  <link rel="icon" href="./images/fav-icon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+  
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div data-include="components/header.html"></div>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO (100vh)
+     BG → Lines → Text
+═══════════════════════════════════════════════ -->
+<section class="ct-hero">
+
+  <img src="./images/contact/contact-bg.png" class="ct-hero-bg" alt=""
+       onerror="this.style.display='none'">
+
+  <img src="./images/contact/waves.png" class="ct-hero-lines" alt=""
+       onerror="this.style.display='none'">
+
+  <div class="ct-hero-content">
+    <div class="container">
+           <div class="ct-designed">
+        <p class="ct-designed-label">Designed for investors who:</p>
+
+        <ul class="ct-designed-list">
+          <li>Have a minimum investment of ₹50 lakh</li>
+          <li>Can commit to a 5+ year time horizon</li>
+          <li>Value process over short-term market movements</li>
+          <li>Seek a long-term capital allocation partner</li>
+        </ul>
+
+        <p class="ct-designed-note">
+          We work with a limited number of families and
+          organisations to ensure depth, alignment, and attention.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — PRICING + OVERSIGHT
+═══════════════════════════════════════════════ -->
+<section class="ct-info">
+
+  <img src="./images/contact/contact-bg.png" class="ct-info-bg" alt=""
+       onerror="this.style.display='none'">
+
+  <div class="container">
+    <div class="ct-info-grid">
+
+      <div>
+        <p class="ct-info-label">Pricing</p>
+        <p class="ct-info-body">
+          We have fixed and variable fee options.<br>
+          Please reach out to us for further details.
+        </p>
+      </div>
+
+      <div>
+        <p class="ct-info-label">Oversight</p>
+        <p class="ct-info-body">
+          We are a discretionary PMS — we make and execute all the investment decisions on your behalf.
+          All decisions and transactions can be tracked anytime through our online portal. In addition,
+          we provide comprehensive reporting on a routine basis, personalised communications on-demand,
+          and well-researched market insights exclusively to our client base.
+          <br><br>
+          If this resonates with you, <a href="#ct-contact">get in touch</a> and access our investment brochure.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — GET IN TOUCH
+═══════════════════════════════════════════════ -->
+<section class="ct-contact" id="ct-contact">
+
+  <img src="./images/contact/contact-2.png" class="ct-contact-bg" alt=""
+       onerror="this.style.display='none'">
+
+  <div class="container">
+
+    <p class="ct-contact-label">Get In Touch</p>
+
+    <div class="ct-card">
+
+      <div class="ct-card-left">
+        
+
+        <h3 class="ct-card-left-title">Contact Details</h3>
+
+        <div class="ct-detail-item">
+         <img src="./images/contact/call.png" class="ct-detail-icon" alt="call-icon">
+          <span class="ct-detail-text"><a href="tel:+918445535080">+91 84455 35080</a></span>
+        </div>
+
+        <div class="ct-detail-item">
+          <img src="./images/contact/mail.png" class="ct-detail-icon" alt="email-icon">
+          <span class="ct-detail-text"><a href="mailto:admin@cumuluswealth.in">admin@cumuluswealth.in</a></span>
+        </div>
+
+        <div class="ct-detail-item">
+          <img src="./images/contact/location.png" class="ct-detail-icon" alt="location-icon">
+          <span class="ct-detail-text">
+            Cumulus Advisory LLP<br>
+            44 Second Main Road, Kovilambakkam,<br>
+            Adyar, Chennai 600083
+          </span>
+        </div>
+
+      </div>
+
+      <div class="ct-card-right">
+
+        <h3 class="ct-form-title">Request a call back</h3>
+        <p class="ct-form-subtitle">
+          Get in touch with us to receive a personal consultation and to be kept more
+          directly involving our investment solutions, scheme details and pricing guide.
+        </p>
+
+        <form id="ct-form" onsubmit="handleSubmit(event)">
+
+          <div class="ct-form-row">
+            <div class="ct-field">
+              <label>First Name</label>
+              <input type="text" name="first_name" required>
+            </div>
+            <div class="ct-field">
+              <label>Last Name</label>
+              <input type="text" name="last_name"  required>
+            </div>
+          </div>
+
+          <div class="ct-form-row">
+            <div class="ct-field">
+              <label>Email</label>
+              <input type="email" name="email" required>
+            </div>
+            <div class="ct-field">
+              <label>Phone Number</label>
+              <input type="tel" name="phone">
+            </div>
+          </div>
+
+          <p class="ct-mcq-label">MCQ</p>
+          <div class="ct-radio-group">
+            <label class="ct-radio-item">
+              <input type="radio" name="type" value="Individual" checked>
+              <span>Individual</span>
+            </label>
+            <label class="ct-radio-item">
+              <input type="radio" name="type" value="Business">
+              <span>Business</span>
+            </label>
+            <label class="ct-radio-item">
+              <input type="radio" name="type" value="Financial Services Provider">
+              <span>Financial Services Provider</span>
+            </label>
+            <label class="ct-radio-item">
+              <input type="radio" name="type" value="Other">
+              <span>Other</span>
+            </label>
+          </div>
+
+          <div class="ct-submit-wrap">
+            <button type="submit" class="ct-btn-submit">Send Mail</button>
+          </div>
+
+          <p class="ct-success" id="ct-success">Thank you — we'll be in touch shortly.</p>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div data-include="components/footer.html"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="components/includes.js"></script>
+<script src="script.js"></script>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('ct-form');
+    const success = document.getElementById('ct-success');
+    const btn = form.querySelector('.ct-btn-submit');
+    btn.textContent = 'Sending…';
+    btn.style.opacity = '0.6';
+    setTimeout(() => {
+      form.reset();
+      btn.textContent = 'Send Mail';
+      btn.style.opacity = '1';
+      success.style.display = 'block';
+      setTimeout(() => { success.style.display = 'none'; }, 4000);
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>

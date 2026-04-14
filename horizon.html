@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horizon — Cumulus Wealth</title>
+  <link rel="icon" href="./images/fav-icon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div data-include="components/header.html"></div>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO
+     BG fades in left → right, then lines appear
+═══════════════════════════════════════════════ -->
+<section class="hrz-hero">
+
+  <!-- Real background — replace src -->
+  <img src="./images/horizon/horizon-bg.png" class="hrz-hero-bg" alt=""
+       onerror="this.style.display='none'">
+
+
+  <!-- Horizontal wave lines image — replace with your actual waves image -->
+  <img src="./images/horizon/waves.png" class="hrz-hero-lines" alt=""
+       onerror="this.style.display='none'">
+
+  <!-- Text content — bottom center -->
+  <div class="hrz-hero-content">
+    <p class="hrz-hero-intro">
+      <strong>Horizon Fund</strong> is a balanced portfolio that aligns holdings
+      with risk, liquidity, and long-term growth goals.
+    </p>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — SCHEME PRIORITIES
+═══════════════════════════════════════════════ -->
+<section class="hrz-priorities">
+
+  <div class="hrz-priorities-bg-fallback"></div>
+  <img src="./images/horizon/Horizon-Section-2.jpg" class="hrz-priorities-bg" alt=""
+       onerror="this.style.display='none'">
+
+  <div class="container">
+
+    <h2 class="hrz-section-label">Scheme<br>Priorities</h2>
+
+    <div class="hrz-priority-grid">
+
+      <!-- Row 1: item left | item right -->
+      <div class="hrz-priority-row">
+        <div class="hrz-priority-item hrz-priority-item--left">
+          <p>Dynamic allocation across<br>mutual funds, ETFs and index<br>funds, select direct equities</p>
+        </div>
+        <div class="hrz-priority-item hrz-priority-item--right">
+          <p>Timed to align with<br>long-term financial goals</p>
+        </div>
+      </div>
+
+      <!-- Row 2: centered single item -->
+      <div class="hrz-priority-row hrz-priority-row--center">
+        <div class="hrz-priority-item hrz-priority-item--center">
+          <p>Dual objective of growth and<br>stability as appropriate</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — CURATED FOR
+═══════════════════════════════════════════════ -->
+
+<section class="elv-curated">
+
+  <div class="elv-curated-bg-fallback"></div>
+  <img src="./images/horizon/Horizon-Section-3.jpg" class="elv-curated-bg" alt=""
+       onerror="this.style.display='none'">
+
+  <div class="container">
+    <p class="elv-curated-label">Curated For</p>
+
+    <p class="elv-curated-body">
+       Curated for investors and families who want portfolios aligned with
+      their goals, liquidity needs, and evolving financial priorities.
+    </p>
+
+    <p class="elv-curated-cta">
+      <a href="./contact.html">Get in touch</a> to access our scheme brochure and performance record.
+    </p>
+  </div>
+    <div class="container">
+    <div class="elv-links-divider"></div>
+    <div class="elv-links-row">
+      <a href="./about.html" class="elv-nav-link">About Cumulus</a>
+      <a href="./horizon.html" class="elv-nav-link">Read About Horizon</a>
+    </div>
+  </div>
+
+</section>  
+
+<!-- FOOTER -->
+<div data-include="components/footer.html"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="components/includes.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

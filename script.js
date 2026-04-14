@@ -110,17 +110,35 @@ function initCumulus() {
   subPanels.forEach(p => p.addEventListener('click', e => e.stopPropagation()));
 
   /* ── Smooth anchor scroll ───────────────────────────── */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const id = a.getAttribute('href');
-      if (id === '#') return;
-      const target = document.querySelector(id);
+document.querySelectorAll('a[href*="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (!href.includes('#')) return;
+
+    const [page, hash] = href.split('#');
+
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+    // If same page (or no page specified)
+    if (!page || page === currentPage) {
+      const target = document.getElementById(hash);
       if (!target) return;
+
       e.preventDefault();
-      const go = () => target.scrollIntoView({ behavior: 'smooth' });
-      menuOpen ? (closeMenu(), setTimeout(go, 420)) : go();
-    });
+
+      const go = () => {
+        target.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      if (menuOpen) {
+        closeMenu();
+        setTimeout(go, 420);
+      } else {
+        go();
+      }
+    }
   });
+});
 
   /* ── Hero wave parallax ─────────────────────────────── */
   const wvGroup = document.querySelector('.c-hero__waves');
