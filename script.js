@@ -207,3 +207,26 @@ if (document.readyState === 'loading') {
   bootCumulus();
 }
 document.addEventListener('componentsLoaded', bootCumulus);
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+document.querySelectorAll('.animate').forEach(el => {
+  observer.observe(el);
+});
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  loader.style.opacity = "0";
+
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 500);
+});

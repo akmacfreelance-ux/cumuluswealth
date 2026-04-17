@@ -1,0 +1,146 @@
+/* ═══════════════════════════════════════════════
+   CUMULUS WEALTH — SITE LOADER
+═══════════════════════════════════════════════ */
+
+.c-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0e1c2e;
+  pointer-events: all;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0s linear 0.7s;
+}
+
+.c-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ── Background wave lines ── */
+.c-loader__waves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  animation: loaderWavesIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+@keyframes loaderWavesIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.c-loader__wave {
+  fill: none;
+  animation: loaderWaveDrift 18s ease-in-out infinite;
+}
+.c-loader__wave:nth-child(2) { animation-duration: 22s; animation-delay: -4s; }
+.c-loader__wave:nth-child(3) { animation-duration: 16s; animation-delay: -8s; }
+.c-loader__wave:nth-child(4) { animation-duration: 20s; animation-delay: -12s; }
+.c-loader__wave:nth-child(5) { animation-duration: 24s; animation-delay: -3s; }
+.c-loader__wave:nth-child(6) { animation-duration: 19s; animation-delay: -10s; }
+
+@keyframes loaderWaveDrift {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  33%       { transform: translateX(-14px) translateY(5px); }
+  66%       { transform: translateX(10px) translateY(-4px); }
+}
+
+/* ── Center content ── */
+.c-loader__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Logo */
+.c-loader__logo {
+  opacity: 0;
+  animation: loaderFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+.c-loader__logo img {
+  height: 52px;
+  width: auto;
+}
+
+/* Fallback text logo */
+.c-loader__logo-text {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  gap: 4px;
+}
+
+.c-loader__logo-name {
+  font-family: 'Moulin Regular', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}
+
+.c-loader__logo-sub {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  color: #b8cdd9;
+}
+
+/* Progress bar track */
+.c-loader__bar-wrap {
+  width: 160px;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+  opacity: 0;
+  animation: loaderFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+
+/* Progress fill — driven by JS */
+.c-loader__bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #2d6e82, #4fc3e8);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Percentage label */
+.c-loader__pct {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: rgba(184,205,217,0.6);
+  opacity: 0;
+  animation: loaderFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+  min-width: 40px;
+  text-align: center;
+}
+
+@keyframes loaderFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Exit — logo scales up subtly as loader fades */
+.c-loader.is-exiting .c-loader__logo {
+  animation: loaderLogoExit 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes loaderLogoExit {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(1.08); }
+}
